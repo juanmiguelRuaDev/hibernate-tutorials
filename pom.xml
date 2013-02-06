@@ -45,6 +45,7 @@
         <module>entitymanager</module>
         <module>envers</module>
         <module>exercices-basic-1</module>
+        <module>exercices-annotations-2</module>
     </modules>
 
     <dependencies>

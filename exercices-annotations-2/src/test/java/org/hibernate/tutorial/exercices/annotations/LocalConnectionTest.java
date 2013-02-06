@@ -1,4 +1,4 @@
-package org.hibernate.tutorial.exercices.hbm;
+package org.hibernate.tutorial.exercices.annotations;
 
 import java.util.Date;
 import java.util.List;

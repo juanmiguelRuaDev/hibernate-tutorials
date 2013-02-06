@@ -9,9 +9,12 @@ public class OperationModel {
 	
 	
 	
-	
-	
 	public OperationModel(){
+		
+	}
+	
+	public OperationModel(Date date){
+		this.date = date;
 		
 	}
 	public int getId() {
