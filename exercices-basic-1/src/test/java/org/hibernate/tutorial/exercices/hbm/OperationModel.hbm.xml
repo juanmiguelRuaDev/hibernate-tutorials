@@ -5,6 +5,13 @@
         <id name="id" column="ID">
             <generator class="increment"/>
         </id>
-        <property name="date" type="timestamp" column="DATE"/>        
+        <property name="date" type="timestamp" column="DATE"/>   
+        
+         
+         <many-to-one name="operationTypeModel" 
+         column="ID_OPERATION_TYPE" 
+         class="OperationTypeModel"
+         cascade="all"
+         fetch="join"/> 
     </class>
 </hibernate-mapping>

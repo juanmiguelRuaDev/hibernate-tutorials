@@ -10,7 +10,7 @@ import org.hibernate.tutorial.exercices.util.HibernateUtil;
 
 import junit.framework.TestCase;
 
-public class LocalConnectionTest extends TestCase {
+public class CreateOperationTypeTest extends TestCase {
 	
 	private SessionFactory sessionFactory;
 	
@@ -31,20 +31,17 @@ public class LocalConnectionTest extends TestCase {
 		// create a couple of events...
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		OperationModel om = new OperationModel( new Date() );
-		om.setOperationTypeModel(new OperationTypeModel("LEASING"));
-		session.save( om );
+		session.save( new OperationTypeModel( "HILE" ) );
+		session.save( new OperationTypeModel( "SALE") );
 		session.getTransaction().commit();
 		session.close();
 
 		// now lets pull events from the database and list them
 		session = sessionFactory.openSession();
         session.beginTransaction();
-        List result = session.createQuery( "from OperationModel" ).list();
-		for ( OperationModel omtemp : (List<OperationModel>) result ) {
-			System.out.println( "OperationModel (" + omtemp.getDate() + ") : " + omtemp.getId() + 
-					"\t OperationType Id:" + omtemp.getOperationTypeModel().getIdOperationType() +
-					" OperationType description:" +omtemp.getOperationTypeModel().getDescription() );
+        List result = session.createQuery( "from OperationTypeModel" ).list();
+		for ( OperationTypeModel otm : (List<OperationTypeModel>) result ) {
+			System.out.println( "OperationModel (" + otm.getDescription() + ") : " + otm.getIdOperationType());
 		}
         session.getTransaction().commit();
         session.close();
