@@ -10,17 +10,20 @@ public class ClientModel extends PersonModel{
 	
 	public ClientModel() {
 		super();
+		this.personType = 1;
 	}
 
 	public ClientModel( String dni, String name, String lastName,
 			String description) {
 		super( dni, name, lastName);
 		this.description = description;
+		this.personType = 1;
 	}
 	
 	
 	public ClientModel( String dni, String name, String lastName) {
 		super( dni, name, lastName);
+		this.personType = 1;
 	}
 
 	public String getDescription() {

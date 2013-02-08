@@ -10,7 +10,7 @@ import org.hibernate.tutorial.exercices.util.HibernateUtil;
 
 import junit.framework.TestCase;
 
-public class CreatePersonAndClientTest extends TestCase {
+public class CreateClientTest extends TestCase {
 	
 	private SessionFactory sessionFactory;
 	

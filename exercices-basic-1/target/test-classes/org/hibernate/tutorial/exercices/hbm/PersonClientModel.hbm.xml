@@ -21,6 +21,10 @@
         not-null="true"
         column="LASTNAME"/>
         
+        <property name="personType"        
+        not-null="true"
+        column="TYPE"/>
+        
         <joined-subclass name="ClientModel" table="TB_CLIENT" extends='PersonModel'>
         	<key column="ID" />
         	<property name="description"
