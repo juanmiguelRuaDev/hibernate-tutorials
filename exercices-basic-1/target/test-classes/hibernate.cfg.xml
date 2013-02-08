@@ -50,7 +50,7 @@
 
         <!-- Drop and re-create the database schema on startup -->
 <!--         <property name="hbm2ddl.auto">create</property> -->
-
+		 <mapping resource="org/hibernate/tutorial/exercices/hbm/PersonClientModel.hbm.xml"/>
         <mapping resource="org/hibernate/tutorial/exercices/hbm/OperationModel.hbm.xml"/>
         <mapping resource="org/hibernate/tutorial/exercices/hbm/OperationTypeModel.hbm.xml"/>
 

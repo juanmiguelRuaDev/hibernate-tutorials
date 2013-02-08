@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="org.hibernate.tutorial.exercices.hbm">
+<class name="PersonModel" table="TB_PERSON">
+        <id name="id" column="ID">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="name" 
+        column="NAME"
+        type="string" 
+        not-null="true"/>
+        
+         <property name="dni" 
+        column="DNI"
+        type="string" 
+        not-null="true"/>
+        
+        <property name="lastname"
+        type="string"
+        not-null="true"
+        column="LASTNAME"/>
+        
+        <joined-subclass name="ClientModel" table="TB_CLIENT" extends='PersonModel'>
+        	<key column="ID" />
+        	<property name="description"
+		      type="string"     
+		     column="DESCRIPTION"/>		 
+        </joined-subclass>
+       
+              
+    </class>
+</hibernate-mapping>
